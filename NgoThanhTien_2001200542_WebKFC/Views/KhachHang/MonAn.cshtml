@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Trang Món Ăn";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}@using NgoThanhTien_2001200542_WebKFC.Models;
+@model List<tbl_MonAn>
+
+<div class="container">
+    <div class="row">
+        @foreach (var sp in Model)
+        {
+            <div class="col-3">
+                <div class="card" style="width: 17rem; display: block ; margin: 10px; text-align: center">
+                    <div class="card-header">
+                        <a href="/KhachHang/DetailMonAn/@sp.id">
+                            <img class="card-img-top w-100" src="~/HinhAnh/@sp.Images" style="height: 200px">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <strong>@sp.Name</strong>
+                        <p>Giá :@string.Format("{0:0,0}", @sp.Price) VND</p>
+                    </div>
+                    <div class="card-footer">
+                        @{
+                            if (Session["KhachHang"] != null)
+                            {
+                                <a href="/KhachHang/AddGioHang/@sp.id" class="btn btn-danger" onclick="alert('Thêm sản phẩm vào giỏ hàng thành công');">Thêm vào giỏ hàng</a>
+
+                            }
+                            else
+                            {
+                                <a href="/KhachHang/DangNhap">
+                                    <button type="button" class="btn btn-secondary">Thêm vào giỏ hàng</button>
+                                </a>
+                             
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

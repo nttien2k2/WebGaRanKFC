@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img style="width: 100%" src="~/HinhAnh/IconKFC.jpg" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-top: 10px ;border-bottom: 1px groove #9a9395">
+                    <ul class="nav">
+                        <li>
+                            <a class="nav-link" style="color: black" href="/NhanVien/index"><strong>TRANG CHỦ</strong></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" style="color: black" href="/NhanVien/QLLoai"><strong>QUẢN LÝ LOẠI</strong></a>
+                        </li>
+                    </ul>
+
+                </div>
+                @*<div class="col-1">
+                    </div>*@
+                <div class="col-md-4" style="margin-top: 10px; border-bottom: 1px groove #9a9395">
+                    <ul class="nav">
+                        <li><a class="nav-link" style="color:grey" href="/KhachHang/DangXuat"><strong>Đăng Xuất</strong></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <div class="container-fluid">
+        <div class="row bg-dark" style="margin: 30px; border-top:groove">
+            <div style="margin: 30px; color: white" class="col-6">
+                <h3>CÔNG TY LIÊN DOANH TNHH KFC VIỆT NAM</h3>
+                <p>Số 292 Bà Triệu, P. Lê Đại Hành, Q. Hai Bà Trưng, TP. Hà Nội.</p>
+                <p>Điện thoại: (028) 38489828</p>
+                <p>Email: lienhe@kfcvietnam.com.vn</p>
+                <p>Mã số thuế: 0100773885</p>
+                <p>
+                    Ngày cấp: 29/10/1998 - Nơi cấp: Cục Thuế Thành Phố Hà Nội
+                </p>
+            </div>
+
+            <div class="col-4">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

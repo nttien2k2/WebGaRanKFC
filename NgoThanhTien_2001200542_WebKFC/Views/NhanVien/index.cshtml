@@ -1,0 +1,39 @@
+﻿@using NgoThanhTien_2001200542_WebKFC.Models;
+@model List<tbl_MonAn>
+@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<div class="container-fluid">
+    <h2>DANH SÁCH MÓN ĂN</h2>
+    <a href="/NhanVien/CreatesMonAn" class="btn btn-sm btn-primary">Thêm mới</a>
+        <table class="table">
+            <tr>
+                <th>Mã món ăn</th>
+                <th>Tên món ăn</th>
+                <th>Ảnh</th>
+                <th>Đơn giá</th>
+                <th>Mô tả</th>
+                <th>Đơn vị</th>
+                <th></th>
+            </tr>
+            
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td width="15%">@item.id</td>
+                        <td width="15%">@item.Name</td>
+                        <td width="20%"><img width="50%" src="~/HinhAnh/@item.Images" /></td>
+                        <td width="10%">@string.Format("{0:0,0}", @item.Price) VND</td>
+                        <td width="15%">@item.Description</td>
+                        <td width="15%">@item.DonViTinh</td>
+                        <td>
+                            <a class="btn btn-sm btn-danger" onclick="alert('Xóa món ăn thành công');"
+                               href="/NhanVien/DeleteMonAn/@item.id">Xóa</a>
+                            <a class="btn btn-sm btn-success" href="/NhanVien/UpdateMonAn/@item.id">Cập nhật</a>
+                        </td>
+                    </tr>
+                }
+        </table>
+</div>

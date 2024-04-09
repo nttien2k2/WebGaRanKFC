@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+@using NgoThanhTien_2001200542_WebKFC.Models;
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="row" style="height: 100px">
+                    <div class="col-md-1">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="\KhachHang\MonAn">
+                                <img style="width: 100%" src="~/HinhAnh/IconKFC.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="margin-top: 10px">
+                        <ul class="nav">
+                            <li>
+                                <a class="nav-link" style="color: black" href="/KhachHang/MonAn"><strong>THỰC ĐƠN</strong></a>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <a class="btn" data-bs-toggle="dropdown">
+                                        <strong>DANH MỤC SẢN PHẨM</strong>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        @Html.Action("DanhMuc", "KhachHang")
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-1">
+                    </div>
+                    <div class="col-md-4" style="margin-top: 10px">
+                        <ul class="nav">
+                            @if (Session["KhachHang"] == null && Session["Admin"] == null)
+                            {
+                                <li><a class="nav-link" style="color:grey" href="/KhachHang/DangKy"><strong>Đăng ký</strong></a></li>
+                                <strong style="margin-top: 6px">|</strong>
+                                <li><a class="nav-link" style="color:grey" href="/KhachHang/DangNhap"><strong>Đăng nhập</strong></a></li>
+                            }
+
+                            @if (Session["KhachHang"] != null)
+                            {
+                                <li><a class="nav-link" style="color:grey" href="/KhachHang/DangXuat"><strong>Đăng Xuất</strong></a></li>
+                            }
+                            else if (Session["Admin"] != null)
+                            {
+                                <li><a class="nav-link" style="color:grey" href="/NhanVien/QLMonAn"><strong>Trang quản trị</strong></a></li>
+                                <strong style="margin-top: 6px">|</strong>
+                                <li><a class="nav-link" style="color:grey" href="/KhachHang/DangXuat"><strong>Đăng Xuất</strong></a></li>
+                            }
+                            <li style="width:100px">
+                                <a href="/KhachHang/GioHang"> <img width="50%" src="~/HinhAnh/giohang.jpg" /></a>
+                                @{
+                                    List<GioHang> lstgiohang = Session["GioHang"] as List<GioHang>;
+                                    if (lstgiohang == null)
+                                    {
+                                        <label>(0)</label>
+                                    }
+                                    else
+                                    {
+                                        <label>(@lstgiohang.Sum(dk => dk.soLuong))</label>
+                                    }
+                                }
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div>
+            @{
+                if (Session["KhachHang"] != null)
+                {
+                    tbl_KhachHang kh = Session["KhachHang"] as tbl_KhachHang;
+                    <p>Chào mừng <strong>@kh.HoTen</strong> đã đến với KFC!</p>
+                }
+                
+            }
+
+        </div>
+        @{
+            if (Session["Admin"] == null)
+            {
+                <div class="container-fluid" style="margin: 20px 0px 40px 0px">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/HinhAnh/gacuon.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/HinhAnh/Homde-phase2.jpg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/HinhAnh/tnag.jpg" class="d-block w-100">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+            }
+        }
+
+        <div>
+            @RenderBody()
+        </div>
+        <div class="container-fluid">
+            <div class="row bg-dark" style="margin: 30px; border-top:groove">
+                <div style="margin: 30px; color: white" class="col-6">
+                    <h3>CÔNG TY LIÊN DOANH TNHH KFC VIỆT NAM</h3>
+                    <p>Số 292 Bà Triệu, P. Lê Đại Hành, Q. Hai Bà Trưng, TP. Hà Nội.</p>
+                    <p>Điện thoại: (028) 38489828</p>
+                    <p>Email: lienhe@kfcvietnam.com.vn</p>
+                    <p>Mã số thuế: 0100773885</p>
+                    <p>
+                        Ngày cấp: 29/10/1998 - Nơi cấp: Cục Thuế Thành Phố Hà Nội
+                    </p>
+                </div>
+
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+</body>
+</html>

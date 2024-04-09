@@ -1,0 +1,8 @@
+﻿@using NgoThanhTien_2001200542_WebKFC.Models;
+@model List<tbl_Loai>
+    @foreach (tbl_Loai l in Model)
+    {
+        <li>
+            <a class="dropdown-item" href="/KhachHang/MonAnTheoLoai/@l.maLoai">@l.TenLoai</a>
+        </li>
+    }

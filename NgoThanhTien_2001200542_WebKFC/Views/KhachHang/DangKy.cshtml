@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = " Trang Đăng Ký";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}@model NgoThanhTien_2001200542_WebKFC.Models.tbl_KhachHang
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <img width="100%" src="~/HinhAnh/register.jpg" />
+        </div>
+        <div class="col-md-7">
+            <div>
+                <h1 style="font-size: 2.2rem; line-height: 38px; font-weight: 700;"><font face="Calibri">TẠO TÀI KHOẢN</font></h1>
+            </div>
+            <form action="/KhachHang/DangKy" method="post">
+                <div class="form-group">
+                    <label>Họ tên của bạn</label>
+                    <input type="text" class="form-control" @*name="HoTen"*@>
+                    <label>Ngày sinh</label>
+                    <input type="date" class="form-control" @*name="NgaySinh"*@>
+                    <label>Số điện thoại</label>
+                    <input type="text" class="form-control" @*name="SDT"*@>
+                    <label>Email</label>
+                    <input type="text" class="form-control" @*name="Email"*@>
+                    <label>User Name</label>
+                    <input type="text" class="form-control" @*name="UserName"*@>
+                    <label>Password</label>
+                    <input type="password" class="form-control" @*name="Password"*@>
+                </div>
+                <button style="margin: 30px" type="submit" class="btn btn-primary">Đăng ký</button>
+            </form>
+        </div>
+    </div>
+</div>
+

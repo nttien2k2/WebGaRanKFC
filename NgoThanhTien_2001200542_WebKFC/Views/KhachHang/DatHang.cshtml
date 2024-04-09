@@ -1,0 +1,41 @@
+﻿@using NgoThanhTien_2001200542_WebKFC.Models;
+@model List<GioHang>
+@{
+    ViewBag.Title = "Trang Đặt Hàng";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<form action="@Url.Action("DatHang", "KhachHang")" method="post">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12" style="text-align: center">
+                <h1>ĐƠN ĐẶT HÀNG</h1>
+                <p>Bạn hãy kiểm tra lại thông tin cho chính xác!</p>
+            </div>
+            <div class="row">
+                <h3>
+                    Thông tin khách hàng
+                </h3>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Họ Tên khách hàng</label>
+                        <input type="text" name="tenKhachHang" class="form-control" placeholder="Tên khách hàng" />
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <input type="text" name="tenKhachHang" class="form-control" placeholder="Số điện thoại khách hàng" />
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ</label>
+                        <input type="text" name="tenKhachHang" class="form-control" placeholder="Địa chỉ khách hàng" />
+                    </div>
+                    <!-- Các trường thông tin khác -->
+                    <button type="submit">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

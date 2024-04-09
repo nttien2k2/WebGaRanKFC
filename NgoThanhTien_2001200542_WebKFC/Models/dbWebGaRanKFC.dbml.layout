@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.25" name="dbWebGaRanKFC">
+  <DataContextMoniker Name="/dbWebGaRanKFCDataContext" />
+  <nestedChildShapes>
+    <classShape Id="60dc6fa8-dcf7-448c-9158-396d217bfcc4" absoluteBounds="3.5, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbWebGaRanKFCDataContext/tbl_HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9cc64c25-4336-48b4-b0ac-c0b24300ae77" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d0b82e1-6756-4ad1-a57c-9b34b8ffcb11" absoluteBounds="6.25, 0.875, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/dbWebGaRanKFCDataContext/tbl_ChiTietHoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81fb7c8d-d623-4b50-a75c-d68b482ef274" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58822435-2ca1-4bc7-bb95-3cfd88cf8bed" absoluteBounds="0.75, 7.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/dbWebGaRanKFCDataContext/tbl_Loai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3a9b674-b548-4dc5-ad34-2bfcb23484fc" absoluteBounds="0.765, 7.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2c8f7ce-565c-447b-a021-b21db2a848f5" absoluteBounds="0.75, 3.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbWebGaRanKFCDataContext/tbl_KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b96b210e-48d2-45fe-a32a-a29fb571af35" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68da3413-a859-45ec-9496-1ff887030539" absoluteBounds="3.5, 6.875, 2, 2.1554996744791657">
+      <DataClassMoniker Name="/dbWebGaRanKFCDataContext/tbl_MonAn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25aed326-893b-4d26-a729-09b16446ef02" absoluteBounds="3.515, 7.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb599e99-8a66-44ad-8101-f4390e963311" absoluteBounds="0.75, 1.125, 2, 1.5785953776041663">
+      <DataClassMoniker Name="/dbWebGaRanKFCDataContext/tbl_NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7291ceef-9fb6-4bcf-bad7-0a1159b27598" absoluteBounds="0.765, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.91429768880208); (6.25 : 1.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbWebGaRanKFCDataContext/tbl_HoaDon/tbl_HoaDon_tbl_ChiTietHoaDon" />
+      <nodes>
+        <classShapeMoniker Id="60dc6fa8-dcf7-448c-9158-396d217bfcc4" />
+        <classShapeMoniker Id="5d0b82e1-6756-4ad1-a57c-9b34b8ffcb11" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.95274983723958); (4.5 : 4.95274983723958); (4.5 : 2.70359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbWebGaRanKFCDataContext/tbl_KhachHang/tbl_KhachHang_tbl_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="c2c8f7ce-565c-447b-a021-b21db2a848f5" />
+        <classShapeMoniker Id="60dc6fa8-dcf7-448c-9158-396d217bfcc4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.95274983723958); (7.25 : 7.95274983723958); (7.25 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbWebGaRanKFCDataContext/tbl_MonAn/tbl_MonAn_tbl_ChiTietHoaDon" />
+      <nodes>
+        <classShapeMoniker Id="68da3413-a859-45ec-9496-1ff887030539" />
+        <classShapeMoniker Id="5d0b82e1-6756-4ad1-a57c-9b34b8ffcb11" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.84699625651042); (3.5 : 7.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbWebGaRanKFCDataContext/tbl_Loai/tbl_Loai_tbl_MonAn" />
+      <nodes>
+        <classShapeMoniker Id="58822435-2ca1-4bc7-bb95-3cfd88cf8bed" />
+        <classShapeMoniker Id="68da3413-a859-45ec-9496-1ff887030539" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.91429768880208); (3.5 : 1.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbWebGaRanKFCDataContext/tbl_NhanVien/tbl_NhanVien_tbl_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="cb599e99-8a66-44ad-8101-f4390e963311" />
+        <classShapeMoniker Id="60dc6fa8-dcf7-448c-9158-396d217bfcc4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,74 @@
+﻿@model NgoThanhTien_2001200542_WebKFC.Models.tbl_MonAn
+
+@{
+    ViewBag.Title = "CreatesMonAn";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<h2>THÊM MÓN ĂN</h2>
+
+@using (Html.BeginForm("CreatesMonAn", "NhanVien", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{     
+    @Html.AntiForgeryToken()
+<div class="container">
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label>Tên món ăn</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mô tả</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Giá bán</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Hình ảnh</label>
+            <div class="col-md-10">
+                <input type="file" name="fileupload" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Đơn vị</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DonViTinh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DonViTinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Loại</label>
+            <div class="col-md-10">
+                @Html.DropDownList("maLoai")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input style="margin: 30px" type="submit" value="Create" class="btn btn-sm btn-primary" />
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

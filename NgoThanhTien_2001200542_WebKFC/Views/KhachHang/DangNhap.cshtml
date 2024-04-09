@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Trang Đăng Nhập";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <img width="100%" src="~/HinhAnh/register.jpg" />
+        </div>
+        <div class="col-md-7">
+            <div>
+                <h1 style="font-size: 2.2rem; line-height: 38px; font-weight: 700;"><font face="Calibri">Đăng Nhập</font></h1>
+            </div>
+            <form action="/KhachHang/DangNhap" method="post">
+                <div class="form-group">
+                    <label>User Name</label>
+                    <input type="text" class="form-control" name="UserName">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="Password">
+                </div>
+                <button style="margin: 30px" type="submit" class="btn btn-primary">Đăng nhập</button>
+            </form>
+            Bạn chưa có tài khoản?
+            <a href="/KhachHang/DangKy">Đăng ký</a>
+        </div>
+    </div>
+</div>
+
+
