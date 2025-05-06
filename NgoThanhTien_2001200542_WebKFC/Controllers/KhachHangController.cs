@@ -1,6 +1,7 @@
 ﻿using NgoThanhTien_2001200542_WebKFC.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Linq.Dynamic;
 using System.Web;
@@ -113,8 +114,35 @@ namespace NgoThanhTien_2001200542_WebKFC.Controllers
         public ActionResult DatHang()
         {
             List<GioHang> lstgiohang = LayGioHang();
-            return View(lstgiohang);
+
+            if (lstgiohang.Count > 0)
+            {
+                string path = Server.MapPath("~/App_Data/lichsu_giohang.csv");
+
+                using (StreamWriter sw = new StreamWriter(path, true))
+                {
+                    var ids = lstgiohang.Select(x => x.maMonAn.ToString()).ToList();
+
+                    // Lấy mã khách hàng từ session
+                    string userId = "anonymous";
+                    if (Session["KhachHang"] != null)
+                    {
+                        var kh = (tbl_KhachHang)Session["KhachHang"];
+                        userId = kh.maKH.ToString(); // hoặc kh.UserName nếu bạn muốn dùng tên đăng nhập
+                    }
+
+                    // Ghi theo định dạng: userId;item1,item2,...
+                    string line = $"{userId};{string.Join(",", ids)}";
+                    sw.WriteLine(line);
+                }
+            }
+
+            lstgiohang.Clear();
+            Session["GioHang"] = null;
+
+            return RedirectToAction("MonAn");
         }
+
         public ActionResult DangKy()
         {
             return View();

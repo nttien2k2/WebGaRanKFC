@@ -78,3 +78,4 @@ C:\LTWEB\2001200542-NgoThanhTien-LTW\NgoThanhTien_2001200542_WebKFC\NgoThanhTien
 C:\LTWEB\2001200542-NgoThanhTien-LTW\NgoThanhTien_2001200542_WebKFC\NgoThanhTien_2001200542_WebKFC\obj\Debug\NgoThanhTien_2001200542_WebKFC.csproj.CopyComplete
 C:\LTWEB\2001200542-NgoThanhTien-LTW\NgoThanhTien_2001200542_WebKFC\NgoThanhTien_2001200542_WebKFC\obj\Debug\NgoThanhTien_2001200542_WebKFC.dll
 C:\LTWEB\2001200542-NgoThanhTien-LTW\NgoThanhTien_2001200542_WebKFC\NgoThanhTien_2001200542_WebKFC\obj\Debug\NgoThanhTien_2001200542_WebKFC.pdb
+C:\LTWEB\2001200542-NgoThanhTien-LTW\NgoThanhTien_2001200542_WebKFC\NgoThanhTien_2001200542_WebKFC\bin\App_Data\suggest.py

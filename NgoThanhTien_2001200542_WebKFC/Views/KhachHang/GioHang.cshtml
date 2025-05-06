@@ -16,50 +16,52 @@
             <h6>Hãy nhấn vào link dưới đây để lựa chọn món ăn @Html.ActionLink("Danh sách món ăn", "MonAn", "KhachHang")</h6>
         }
     }
-    <form action="@Url.Action("UpdateGioHang", "KhachHang")" method="post">
-        <table class="table">
-            <tr>
-                <th>Tên món ăn</th>
-                <th>Ảnh</th>
-                <th>Đơn giá</th>
-                <th>Số Lượng</th>
-                <th>Thành Tiền</th>
-                <th></th>
-            </tr>
-            @{ int stt = 0;
-                foreach (var item in Model)
-                {
-                    stt++;
-                    <tr>
-                        <td width="15%">@item.name</td>
-                        <td width="20%"><img width="70%" src="~/HinhAnh/@item.images" /></td>
-                        <td width="10%">@string.Format("{0:0,0}", @item.price) VND</td>
-                        <td width="10%">
-                            <input type="hidden" name="id" value="@item.maMonAn" />
-                            <input type="number" class="form-control" name="soLuong_@item.maMonAn" value="@item.soLuong" />
-                        </td>
-                        <td width="10%">@string.Format("{0:0,0}", @item.thanhTien) VND</td>
-                        <td>
-                            <a class="btn btn-sm btn-danger" onclick="alert('Xóa sản phẩm khỏi giỏ hàng thành công');"
-                               href="/KhachHang/DeleteGioHang/@item.maMonAn">Xóa</a>
-                            <input type="submit" class=" btn btn-sm btn-success" value="Cập nhật" />
-                        </td>
-                    </tr>
-                }
+<form action="@Url.Action("UpdateGioHang", "KhachHang")" method="post">
+    <table class="table">
+        <tr>
+            <th>Tên món ăn</th>
+            <th>Ảnh</th>
+            <th>Đơn giá</th>
+            <th>Số Lượng</th>
+            <th>Thành Tiền</th>
+            <th></th>
+        </tr>
+        @{ int stt = 0;
+            foreach (var item in Model)
+            {
+                stt++;
+                <tr>
+                    <td width="15%">@item.name</td>
+                    <td width="20%"><img width="70%" src="~/HinhAnh/@item.images" /></td>
+                    <td width="10%">@string.Format("{0:0,0}", @item.price) VND</td>
+                    <td width="10%">
+                        <input type="hidden" name="id" value="@item.maMonAn" />
+                        <input type="number" class="form-control" name="soLuong_@item.maMonAn" value="@item.soLuong" />
+                    </td>
+                    <td width="10%">@string.Format("{0:0,0}", @item.thanhTien) VND</td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" onclick="alert('Xóa sản phẩm khỏi giỏ hàng thành công');"
+                           href="/KhachHang/DeleteGioHang/@item.maMonAn">Xóa</a>
+                        <input type="submit" class=" btn btn-sm btn-success" value="Cập nhật" />
+                    </td>
+                </tr>
             }
-            <tr>
-                <td></td>
-                <td></td>
-                <td>
-                </td>
-                <th>Tổng</th>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+            </td>
+            <th>Tổng</th>
 
-                <td>@string.Format("{0:0,0}", ViewBag.sumtt) VND</td>
-                <td>
-                    <a href="/KhachHang/DatHang" class="btn btn-primary">Đặt hàng</a>
-                    <a href="/KhachHang/DeleteAllGioHang" class="btn btn-danger" onclick="alert('Tất cả món ăn trong giỏ hàng đã được xóa');">Xóa tất cả món ăn </a>
-                </td>
-            </tr>
-        </table>
-        </from>
+            <td>@string.Format("{0:0,0}", ViewBag.sumtt) VND</td>
+            <td>
+                <a href="/KhachHang/DatHang" class="btn btn-primary">Đặt hàng</a>
+                <a href="/KhachHang/DeleteAllGioHang" class="btn btn-danger" onclick="alert('Tất cả món ăn trong giỏ hàng đã được xóa');">Xóa tất cả món ăn </a>
+            </td>
+        </tr>
+    </table>
+    @Html.Action("GoiYMonAn", "Suggestion")
+    </from>
+
 </div>
